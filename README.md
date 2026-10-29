@@ -101,3 +101,31 @@ This is a local functional prototype, not a production dialer. Provider initiati
 ### Basic load test
 
 See `docs/LOAD-TEST.md` for a PowerShell smoke/load test and the allocation invariants to verify. Record actual measurements after running it locally.
+
+## Live Deployment
+
+**Base URL:** https://smartdialer-5088.onrender.com
+
+### API Endpoints
+
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/api/metrics` | View dialer metrics |
+| GET | `/api/agents` | List agents |
+| POST | `/api/agents` | Create an agent |
+| PATCH | `/api/agents/{id}/status` | Update agent status |
+| GET | `/api/borrowers` | List borrowers |
+| POST | `/api/borrowers` | Create a borrower |
+| POST | `/api/dial` | Initiate a dial request |
+| GET | `/api/calls` | View call records |
+| POST | `/api/calls/{id}/events` | Process provider events |
+| GET | `/api/simulation` | Run pacing simulations |
+
+### Deployment Notes
+
+- The backend is deployed on Render using Docker and Java 21.
+- MySQL is hosted on Aiven.
+- Database credentials are configured through environment variables.
+- Provider events in the demo simulate call lifecycle updates; they do not establish that a real telephone call was placed.
+- The free hosting plan may take time to respond after a period of inactivity.
+
