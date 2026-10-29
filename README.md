@@ -129,3 +129,17 @@ See `docs/LOAD-TEST.md` for a PowerShell smoke/load test and the allocation inva
 - Provider events in the demo simulate call lifecycle updates; they do not establish that a real telephone call was placed.
 - The free hosting plan may take time to respond after a period of inactivity.
 
+
+## Live API Usage
+
+**Base URL:** https://smartdialer-5088.onrender.com
+
+The application exposes REST API endpoints under `/api`. The base URL (`/`) does not currently have a mapped handler, so it may return Spring Boot's Whitelabel Error Page with HTTP 404. This does not indicate that the API endpoints are unavailable.
+
+### Quick API Checks
+
+- Metrics: https://smartdialer-5088.onrender.com/api/metrics
+- Agents: https://smartdialer-5088.onrender.com/api/agents
+- Borrowers: https://smartdialer-5088.onrender.com/api/borrowers
+- Calls: https://smartdialer-5088.onrender.com/api/calls
+
